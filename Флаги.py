@@ -1,23 +1,26 @@
 from tkinter import *
+from configuration import *   #настройки для проекта
+
 
 root = Tk()
 root.title('Флаги')
-root.geometry('520x780')
+root.geometry(size)
 root.resizable(height = False, width = False)
-root.iconbitmap('icon.ico') #иконка
-root.config(bg = '#87CEFA') #фон
+root.iconbitmap('Images\EmojiAndPictures/icon.ico') #иконка
+root.config(bg = background) #фон
+
 
 score = 0
 
 def mainmenu():
-    labelgame2.place_forget()
-    winlabel.place_forget()
-    backbotton1.place_forget()
+    WinText.place_forget()
+    Win.place_forget()
+    BackButton.place_forget()
     label10.pack_forget()
 
-    labelgame.place_forget()
-    loselabel.place_forget()
-    backbotton1.place_forget()
+    LoseText.place_forget()
+    Lose.place_forget()
+
 
     label4.pack_forget()
     label5.pack_forget()
@@ -26,61 +29,14 @@ def mainmenu():
     label8.pack_forget()
     label9.pack_forget()
 
-    label3.pack_forget()
-    brazillabel.place_forget()
-    quest2.place_forget()
-    quest4.place_forget()
-    quest6.place_forget()
-    quest8.place_forget()
 
-    danialabel.place_forget()
-    quest10.place_forget()
-    quest12.place_forget()
-    quest14.place_forget()
-    quest16.place_forget()
 
-    egipetlabel.place_forget()
-    quest18.place_forget()
-    quest20.place_forget()
-    quest22.place_forget()
-    quest24.place_forget()
-
-    korealabel.place_forget()
-    quest26.place_forget()
-    quest28.place_forget()
-    quest30.place_forget()
-    quest32.place_forget()
-
-    serbialabel.place_forget()
-    quest34.place_forget()
-    quest36.place_forget()
-    quest38.place_forget()
-    quest40.place_forget()
-
-    vietnamlabel.place_forget()
-    quest42.place_forget()
-    quest44.place_forget()
-    quest46.place_forget()
-    quest48.place_forget()
-
-    uzbeklabel.place_forget()
-    quest50.place_forget()
-    quest52.place_forget()
-    quest54.place_forget()
-    quest56.place_forget()
-
-    rioiImagelabel.place_forget()
-    quest342.place_forget()
-    quest344.place_forget()
-    quest346.place_forget()
-    quest348.place_forget()
-
-    play3.place(x=130, y=150)
-    play5.place(x=130, y=300)
-    play7.place(x=130, y=450)
-    label2.pack()
-    labelname.place(x=43, y=670)
-    maplabel.place(x=180, y=565)
+    Play1GameButton.place(x=130, y=150)
+    PlayGame2Button.place(x=130, y=300)
+    PlayGame3Button.place(x=130, y=450)
+    ChoiseGameText.pack()
+    HeadName.place(x=43, y=670)
+    Crown.place(x=180, y=565)
 
     label102.pack_forget()
     label103.pack_forget()
@@ -124,9 +80,9 @@ def win1():
     label207.pack_forget()
 
 
-    labelgame2.place(y=60, x=140)
-    winlabel.place(x=65, y=160)
-    backbotton1.place(x=120, y=660)
+    WinText.place(y=60, x=140)
+    Win.place(x=65, y=160)
+    BackButton.place(x=120, y=660)
 
 def gameover():
 
@@ -178,21 +134,21 @@ def gameover():
     quest54.place_forget()
     quest56.place_forget()
 
-    labelgame.place(y=100, x=14)
-    loselabel.place(x=55, y=250)
-    backbotton1.place(x=125, y=610)
+    LoseText.place(y=100, x=14)
+    Lose.place(x=55, y=250)
+    BackButton.place(x=125, y=610)
 #Главная страница#########################################################
 
 def play_button():
-    label1.pack_forget()
+    FlagiText.pack_forget()
     canvas.pack_forget()
-    play1.place_forget()
-    play3.place(x=130, y=150)
-    play5.place(x=130, y=300)
-    play7.place(x=130, y=450)
-    labelname.place(x=43, y=670)
-    maplabel.place(x=180, y=565)
-    mainEarthlabel.place_forget()
+    PlayButton.place_forget()
+    Play1GameButton.place(x=130, y=150)
+    PlayGame2Button.place(x=130, y=300)
+    PlayGame3Button.place(x=130, y=450)
+    HeadName.place(x=43, y=670)
+    Crown.place(x=180, y=565)
+
 
 def gameover2():
     label100.pack_forget()
@@ -240,9 +196,9 @@ def gameover2():
     quest156.place_forget()
     quest158.place_forget()
 
-    labelgame.place(y=100, x=14)
-    loselabel.place(x=55, y=250)
-    backbotton1.place(x=125, y=610)
+    LoseText.place(y=100, x=14)
+    Lose.place(x=55, y=250)
+    BackButton.place(x=125, y=610)
 
 def gameover3():
     label200.pack_forget()
@@ -285,41 +241,33 @@ def gameover3():
     quest348.place_forget()
 
 
-    labelgame.place(y=100, x=14)
-    loselabel.place(x=55, y=250)
-    backbotton1.place(x=125, y=610)
+    LoseText.place(y=100, x=14)
+    Lose.place(x=55, y=250)
+    BackButton.place(x=125, y=610)
 
 
 
-label1 = Label(root, text = "Флаги", font = ('Bookman Old Style', 60), bg = '#87CEFA', fg = 'black', pady=15)
-label1.pack()
-
-canvas = Canvas(root, width=520, height=780, highlightthickness=0, bg = '#87CEFA')
+FlagiText = Label(root, text="Флаги", font=(font, 60), bg=background, fg=fontground, pady=15)
+FlagiText.pack()
+canvas = Canvas(root, width=520, height=780, highlightthickness=0, bg=background)
 canvas.pack()
 
-play = PhotoImage(file='play.png')
-play = play.subsample(7,7)
-play1 = Button(root, image=play, highlightthickness=0, bd=0,activebackground='#87CEFA', command=play_button)
-play1.place(x=170, y=510)
+PlayImageButton = PhotoImage(file='Images\Buttons\play.png')
+PlayImageButton = PlayImageButton.subsample(7,7)
+PlayButton = Button(root, image=PlayImageButton, highlightthickness=0, bd=0,activebackground=background, command=play_button)
+PlayButton.place(x=170, y=400)
 
-
-mainEarth = PhotoImage(file='main_earth.png')
-mainEarth = mainEarth.subsample(2,2)
-mainEarthlabel = Label(root, highlightthickness=0, bd=0, activebackground='#87CEFA')
-mainEarthlabel.image = mainEarth
-mainEarthlabel['image'] = mainEarth
-mainEarthlabel.place(x=110,y=160)
 
 
 #Выбор игры################################################################
 
 
 def gamechoice1():
-    label2.pack_forget()
+    ChoiseGameText.pack_forget()
     canvas2.pack_forget()
-    play3.place_forget()
-    play5.place_forget()
-    play7.place_forget()
+    Play1GameButton.place_forget()
+    PlayGame2Button.place_forget()
+    PlayGame3Button.place_forget()
     label3.pack()
     label4.pack()
     brazillabel.place(x=110, y=180)
@@ -327,17 +275,17 @@ def gamechoice1():
     quest4.place(y=490, x=80)
     quest6.place(y=570, x=80)
     quest8.place(y=650, x=80)
-    labelname.place_forget()
-    maplabel.place_forget()
+    HeadName.place_forget()
+    Crown.place_forget()
 
 def gamechoice2():
-    label2.pack_forget()
+    ChoiseGameText.pack_forget()
     canvas2.pack_forget()
-    play3.place_forget()
-    play5.place_forget()
-    play7.place_forget()
-    labelname.place_forget()
-    maplabel.place_forget()
+    Play1GameButton.place_forget()
+    PlayGame2Button.place_forget()
+    PlayGame3Button.place_forget()
+    HeadName.place_forget()
+    Crown.place_forget()
 
     label100.pack()
     label101.pack()
@@ -351,13 +299,13 @@ def gamechoice2():
 
 
 def gamechoice3():
-    label2.pack_forget()
+    ChoiseGameText.pack_forget()
     canvas2.pack_forget()
-    play3.place_forget()
-    play5.place_forget()
-    play7.place_forget()
-    labelname.place_forget()
-    maplabel.place_forget()
+    Play1GameButton.place_forget()
+    PlayGame2Button.place_forget()
+    PlayGame3Button.place_forget()
+    HeadName.place_forget()
+    Crown.place_forget()
 
     label200.pack()
     label201.pack()
@@ -369,65 +317,68 @@ def gamechoice3():
     quest306.place(y=570, x=80)
     quest308.place(y=650, x=80)
 
-label2 = Label(root, text = "Во что играем?", font = ('Bookman Old Style', 40), bg = '#87CEFA', fg = 'black', pady=15)
-label2.pack()
-canvas2 = Canvas(root, width=520, height=780, highlightthickness=0, bg = '#87CEFA')
+ChoiseGameText = Label(root, text = "Во что играем?", font = (font, 40), bg = background, fg = fontground, pady=15)
+ChoiseGameText.pack()
+canvas2 = Canvas(root, width=520, height=780, highlightthickness=0, bg = background)
 canvas2.pack()
 
-play2 = PhotoImage(file='game1.png')
-play2 = play2.subsample(2,2)                                                               #1 игра
-play3 = Button(root, image=play2, highlightthickness=0, bd=0,activebackground='#87CEFA',command=gamechoice1)
+Play1GameImage = PhotoImage(file='Images\Buttons\game1.png')
+Play1GameImage = Play1GameImage.subsample(2,2)                                                               #1 игра
+Play1GameButton = Button(root, image=Play1GameImage, highlightthickness=0, bd=0,activebackground=background,command=gamechoice1)
 
-play4 = PhotoImage(file='game2.png')
-play4 = play4.subsample(2,2)                                                               #2 игра
-play5 = Button(root, image=play4, highlightthickness=0, bd=0,activebackground='#87CEFA', command=gamechoice2)
+PlayGame2Image = PhotoImage(file='Images\Buttons\game2.png')
+PlayGame2Image = PlayGame2Image.subsample(2,2)                                                               #2 игра
+PlayGame2Button = Button(root, image=PlayGame2Image, highlightthickness=0, bd=0,activebackground=background, command=gamechoice2)
 
-play6 = PhotoImage(file='game3.png')
-play6 = play6.subsample(2,2)                                                               #3 игра
-play7 = Button(root, image=play6, highlightthickness=0, bd=0,activebackground='#87CEFA', command=gamechoice3)
-
-labelname = Label(root, text='Сделано командой ЕлсуковTeam', font = ('Bookman Old Style', 20), bg = '#87CEFA', fg = '#808080', pady=30)
+PlayGame3Image = PhotoImage(file='Images\Buttons\game3.png')
+PlayGame3Image = PlayGame3Image.subsample(2,2)                                                               #3 игра
+PlayGame3Button = Button(root, image=PlayGame3Image, highlightthickness=0, bd=0,activebackground=background, command=gamechoice3)
 
 
-mapImage = PhotoImage(file='map.png')
-mapImage = mapImage.subsample(3,3)
-maplabel = Label(root, highlightthickness=0, bd=0)
-maplabel.image = mapImage
-maplabel['image'] = mapImage
+HeadName = Label(root, text=CreatorName, font = (font, 20), bg = background, fg = CreatorNameColor, pady=30)
+
+
+CrownImage = PhotoImage(file='Images\EmojiAndPictures/map.png')
+CrownImage = CrownImage.subsample(3,3)
+Crown = Label(root, highlightthickness=0, bd=0)
+Crown.image = CrownImage
+Crown['image'] = CrownImage
+
+
 
 
 
 #победа
 
-labelgame2 = Label(root, text = "Победа", font = ('Bookman Old Style', 48), bg = '#87CEFA', fg = 'black', pady=15)
+WinText = Label(root, text = "Победа", font = (font, 48), bg = background, fg = fontground, pady=15)
 
-winImage = PhotoImage(file='win.png')
-winImage = winImage.subsample(1,1)
-winlabel = Label(root, highlightthickness=0, bd=0)
-winlabel.image = winImage
-winlabel['image'] = winImage
+WinImage = PhotoImage(file='Images\EmojiAndPictures/win.png')
+WinImage = WinImage.subsample(1,1)
+Win = Label(root, highlightthickness=0, bd=0)
+Win.image = WinImage
+Win['image'] = WinImage
 
-backbotton = PhotoImage(file='mainbutton.png')
-backbotton = backbotton.subsample(2,2)
-backbotton1 = Button(root, image=backbotton, highlightthickness=0, activebackground='#87CEFA', bd=0, command=mainmenu)
+BackButtonImage = PhotoImage(file='Images\Buttons\mainbutton.png')
+BackButtonImage = BackButtonImage.subsample(2,2)
+BackButton = Button(root, image=BackButtonImage, highlightthickness=0, bd=0, command=mainmenu)
 
 
 
 #проигрыш
 
-labelgame = Label(root, text = "Игра окончена", font = ('Bookman Old Style', 48), bg = '#87CEFA', fg = 'black', pady=15)
+LoseText = Label(root, text = "Игра окончена", font = (font, 48), bg = background, fg = fontground, pady=15)
 
-loseImage = PhotoImage(file='pain.png')
-loseImage = loseImage.subsample(1,1)
-loselabel = Label(root, highlightthickness=0, bd=0)
-loselabel.image = loseImage
-loselabel['image'] = loseImage
+LoseImage = PhotoImage(file='Images\EmojiAndPictures/pain.png')
+LoseImage = LoseImage.subsample(1,1)
+Lose = Label(root, highlightthickness=0, bd=0)
+Lose.image = LoseImage
+Lose['image'] = LoseImage
 
 
 #Игра 1#############################################################################
 
-label3 = Label(root, text = "Выберите страну по флагу", font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=15)   #Название
-label4 = Label(root, text="Счёт: " + str(score), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)                       #Счёт
+label3 = Label(root, text = "Выберите страну по флагу", font = (font, 27), bg = background, fg = fontground, pady=15)   #Название
+label4 = Label(root, text="Счёт: " + str(score), font = (font, 27), bg = background, fg = fontground, pady=10)                       #Счёт
 
 
 #1 уровень#########################################################################
@@ -446,22 +397,22 @@ def game1level2():
     quest14.place(y=570, x=80)
     quest16.place(y=650, x=80)
 
-brailImage = PhotoImage(file="brazil.png")
+brailImage = PhotoImage(file="Images\Flags/flag_brazil.png")
 brailImage = brailImage.subsample(2,2)
 brazillabel = Label(root)
 brazillabel.image = brailImage
 brazillabel['image'] = brailImage
 
-quest1 = PhotoImage(file='nigeria.png')
+quest1 = PhotoImage(file='Images\Buttons/nigeria.png')
 quest2 = Button(root, image=quest1, highlightthickness=0, bd=0, command=gameover)
 
-quest3 = PhotoImage(file='brazilia.png')
+quest3 = PhotoImage(file='Images\Buttons/brazilia.png')
 quest4 = Button(root, image=quest3, highlightthickness=0, bd=0, command=game1level2)
 
-quest5 = PhotoImage(file='germany.png')
+quest5 = PhotoImage(file='Images\Buttons/germany.png')
 quest6 = Button(root, image=quest5, highlightthickness=0, bd=0, command=gameover)
 
-quest7 = PhotoImage(file='russia.png')
+quest7 = PhotoImage(file='Images\Buttons/russia.png')
 quest8 = Button(root, image=quest7, highlightthickness=0, bd=0, command=gameover)
 
 
@@ -483,26 +434,25 @@ def game1level3():
     quest24.place(y=650, x=80)
 
 
-label3 = Label(root, text = "Выберите страну по флагу", font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=15)   #Название
-label5 = Label(root, text="Счёт: " + str(score+1), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)                       #Счёт
+label5 = Label(root, text="Счёт: " + str(score+1), font = (font, 27), bg = background, fg = fontground, pady=10)                       #Счёт
 
-daniaImage = PhotoImage(file='flag_dania.png')
+daniaImage = PhotoImage(file='Images\Flags/flag_dania.png')
 daniaImage = daniaImage.subsample(2,2)
 danialabel = Label(root)
 danialabel.image = daniaImage
 danialabel['image'] = daniaImage
 
 
-quest9 = PhotoImage(file='chexia.png')
+quest9 = PhotoImage(file='Images\Buttons/chexia.png')
 quest10 = Button(root, image=quest9, highlightthickness=0, bd=0, command=gameover)
 
-quest11 = PhotoImage(file='belarussia.png')
+quest11 = PhotoImage(file='Images\Buttons/belarussia.png')
 quest12 = Button(root, image=quest11, highlightthickness=0, bd=0, command=gameover)
 
-quest13= PhotoImage(file='belgia.png')
+quest13= PhotoImage(file='Images\Buttons/belgia.png')
 quest14 = Button(root, image=quest13, highlightthickness=0, bd=0, command=gameover)
 
-quest15= PhotoImage(file='dania.png')
+quest15= PhotoImage(file='Images\Buttons/dania.png')
 quest16 = Button(root, image=quest15, highlightthickness=0, bd=0, command=game1level3)
 
 
@@ -525,24 +475,24 @@ def game1level3():
 
 
 
-label6 = Label(root, text="Счёт: " + str(score+2), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
-egipetImage = PhotoImage(file='flag_egipet.png')
+label6 = Label(root, text="Счёт: " + str(score+2), font = (font, 27), bg = background, fg = fontground, pady=10)
+egipetImage = PhotoImage(file='Images\Flags/flag_egipet.png')
 egipetImage = egipetImage.subsample(3,3)
 egipetlabel = Label(root)
 egipetlabel.image = egipetImage
 egipetlabel['image'] = egipetImage
 
 
-quest17 = PhotoImage(file='egipet.png')
+quest17 = PhotoImage(file='Images\Buttons/egipet.png')
 quest18 = Button(root, image=quest17, highlightthickness=0, bd=0, command=game1level3)
 
-quest19 = PhotoImage(file='irak.png')
+quest19 = PhotoImage(file='Images\Buttons/irak.png')
 quest20 = Button(root, image=quest19, highlightthickness=0, bd=0, command=gameover)
 
-quest21= PhotoImage(file='franch.png')
+quest21= PhotoImage(file='Images\Buttons/franch.png')
 quest22 = Button(root, image=quest21, highlightthickness=0, bd=0, command=gameover)
 
-quest23= PhotoImage(file='greek.png')
+quest23= PhotoImage(file='Images\Buttons\greek.png')
 quest24 = Button(root, image=quest23, highlightthickness=0, bd=0, command=gameover)
 
 
@@ -568,24 +518,24 @@ def game1level4():
 
 
 
-label7 = Label(root, text="Счёт: " + str(score+3), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
-koreaImage = PhotoImage(file='flag_korea.png')
+label7 = Label(root, text="Счёт: " + str(score+3), font = (font, 27), bg = background, fg = fontground, pady=10)
+koreaImage = PhotoImage(file='Images\Flags/flag_korea.png')
 koreaImage = koreaImage.subsample(2,2)
 korealabel = Label(root)
 korealabel.image = koreaImage
 korealabel['image'] = koreaImage
 
 
-quest25 = PhotoImage(file='japan.png')
+quest25 = PhotoImage(file='Images\Buttons/japan.png')
 quest26 = Button(root, image=quest25, highlightthickness=0, bd=0, command=gameover)
 
-quest27 = PhotoImage(file='kuba.png')
+quest27 = PhotoImage(file='Images\Buttons/kuba.png')
 quest28 = Button(root, image=quest27, highlightthickness=0, bd=0, command=gameover)
 
-quest29= PhotoImage(file='korea.png')
+quest29= PhotoImage(file='Images\Buttons/korea.png')
 quest30 = Button(root, image=quest29, highlightthickness=0, bd=0, command=game1level4)
 
-quest31= PhotoImage(file='spain.png')
+quest31= PhotoImage(file='Images\Buttons/spain.png')
 quest32 = Button(root, image=quest31, highlightthickness=0, bd=0, command=gameover)
 
 
@@ -612,25 +562,25 @@ def game1level5():
 
 
 
-label8 = Label(root, text="Счёт: " + str(score+4), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label8 = Label(root, text="Счёт: " + str(score+4), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-serbiaImage = PhotoImage(file='flag_serbia.png')
+serbiaImage = PhotoImage(file='Images\Flags/flag_serbia.png')
 serbiaImage = serbiaImage.subsample(3,3)
 serbialabel = Label(root)
 serbialabel.image = serbiaImage
 serbialabel['image'] = serbiaImage
 
 
-quest33 = PhotoImage(file='serbia.png')
+quest33 = PhotoImage(file='Images\Buttons/serbia.png')
 quest34 = Button(root, image=quest33, highlightthickness=0, bd=0, command=game1level5)
 
-quest35 = PhotoImage(file='turkey.png')
+quest35 = PhotoImage(file='Images\Buttons/turkey.png')
 quest36 = Button(root, image=quest35, highlightthickness=0, bd=0, command=gameover)
 
-quest37= PhotoImage(file='slovakia.png')
+quest37= PhotoImage(file='Images\Buttons/slovakia.png')
 quest38 = Button(root, image=quest37, highlightthickness=0, bd=0, command=gameover)
 
-quest39= PhotoImage(file='vengria.png')
+quest39= PhotoImage(file='Images\Buttons/vengria.png')
 quest40 = Button(root, image=quest39, highlightthickness=0, bd=0, command=gameover)
 
 
@@ -651,47 +601,47 @@ def game1level6():
     quest54.place(y=570, x=80)
     quest56.place(y=650, x=80)
 
-label9 = Label(root, text="Счёт: " + str(score+5), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label9 = Label(root, text="Счёт: " + str(score+5), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-vietnamImage = PhotoImage(file='flag_vietnam.png')
+vietnamImage = PhotoImage(file='Images\Flags/flag_vietnam.png')
 vietnamImage = vietnamImage.subsample(2,2)
 vietnamlabel = Label(root)
 vietnamlabel.image = vietnamImage
 vietnamlabel['image'] = vietnamImage
 
-quest41 = PhotoImage(file='china.png')
+quest41 = PhotoImage(file='Images\Buttons/china.png')
 quest42 = Button(root, image=quest41, highlightthickness=0, bd=0, command=gameover)
 
-quest43 = PhotoImage(file='korea.png')
+quest43 = PhotoImage(file='Images\Buttons/korea.png')
 quest44 = Button(root, image=quest43, highlightthickness=0, bd=0, command=gameover)
 
-quest45= PhotoImage(file='japan.png')
+quest45= PhotoImage(file='Images\Buttons/japan.png')
 quest46 = Button(root, image=quest45, highlightthickness=0, bd=0, command=gameover)
 
-quest47= PhotoImage(file='vietnam.png')
+quest47= PhotoImage(file='Images\Buttons/vietnam.png')
 quest48 = Button(root, image=quest47, highlightthickness=0, bd=0, command=game1level6)
 
 
 #7 уровень#########################################################################################
 
-label10 = Label(root, text="Счёт: " + str(score+6), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label10 = Label(root, text="Счёт: " + str(score+6), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-uzbekImage = PhotoImage(file='flag_uzbekistan.png')
+uzbekImage = PhotoImage(file='Images\Flags/flag_uzbekistan.png')
 uzbekImage = uzbekImage.subsample(2,2)
 uzbeklabel = Label(root)
 uzbeklabel.image = vietnamImage
 uzbeklabel['image'] = uzbekImage
 
-quest49 = PhotoImage(file='kazahstan.png')
+quest49 = PhotoImage(file='Images\Buttons/kazahstan.png')
 quest50 = Button(root, image=quest49, highlightthickness=0, bd=0, command=gameover)
 
-quest51 = PhotoImage(file='uzbek.png')
+quest51 = PhotoImage(file='Images\Buttons/uzbek.png')
 quest52 = Button(root, image=quest51, highlightthickness=0, bd=0, command=win1)
 
-quest53= PhotoImage(file='sydan.png')
+quest53= PhotoImage(file='Images\Buttons/sydan.png')
 quest54 = Button(root, image=quest53, highlightthickness=0, bd=0, command=gameover)
 
-quest55= PhotoImage(file='irak.png')
+quest55= PhotoImage(file='Images\Buttons/irak.png')
 quest56 = Button(root, image=quest55, highlightthickness=0, bd=0, command=gameover)
 
 
@@ -701,9 +651,9 @@ quest56 = Button(root, image=quest55, highlightthickness=0, bd=0, command=gameov
 
 #Игра 2############################################################################################33
 
-label100 = Label(root, text = "Выберите страну", font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=15)   #Название
-label101 = Label(root, text = "по известному факту", font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=15)
-label102 = Label(root, text="Счёт: " + str(score), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)                       #Счёт
+label100 = Label(root, text = "Выберите страну", font = (font, 27), bg = background, fg = fontground, pady=15)   #Название
+label101 = Label(root, text = "по известному факту", font = (font, 27), bg = background, fg = fontground, pady=15)
+label102 = Label(root, text="Счёт: " + str(score), font = (font, 27), bg = background, fg = fontground, pady=10)                       #Счёт
 
 #1 уровень############################################################################################
 
@@ -722,22 +672,22 @@ def game2level2():
     quest116.place(y=570, x=80)
     quest118.place(y=650, x=80)
 
-argentinaImage = PhotoImage(file='question_argentina.png')
+argentinaImage = PhotoImage(file='Images\Questions/question_argentina.png')
 argentinaImage = argentinaImage.subsample(1,1)
 argentinaImagelabel = Label(root, highlightthickness=0, bd=0)
 argentinaImagelabel.image = argentinaImage
 argentinaImagelabel['image'] = argentinaImage
 
-quest103 = PhotoImage(file='argentina.png')
+quest103 = PhotoImage(file='Images\Buttons/argentina.png')
 quest104 = Button(root, image=quest103, highlightthickness=0, bd=0, command=game2level2)
 
-quest105 = PhotoImage(file='brazilia.png')
+quest105 = PhotoImage(file='Images\Buttons/brazilia.png')
 quest106 = Button(root, image=quest105, highlightthickness=0, bd=0, command=gameover2)
 
-quest107 = PhotoImage(file='korea.png')
+quest107 = PhotoImage(file='Images\Buttons/korea.png')
 quest108 = Button(root, image=quest107, highlightthickness=0, bd=0, command=gameover2)
 
-quest109 = PhotoImage(file='china.png')
+quest109 = PhotoImage(file='Images\Buttons/china.png')
 quest110 = Button(root, image=quest109, highlightthickness=0, bd=0, command=gameover2)
 
 
@@ -759,24 +709,24 @@ def game2level3():
     quest126.place(y=650, x=80)
 
 
-label103 = Label(root, text="Счёт: " + str(score+1), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label103 = Label(root, text="Счёт: " + str(score+1), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-indiaImage = PhotoImage(file='question_india.png')
+indiaImage = PhotoImage(file='Images\Questions/question_india.png')
 indiaImage = indiaImage.subsample(1,1)
 indiaImagelabel = Label(root, highlightthickness=0, bd=0)
 indiaImagelabel.image = indiaImage
 indiaImagelabel['image'] = indiaImage
 
-quest111 = PhotoImage(file='china.png')
+quest111 = PhotoImage(file='Images\Buttons/china.png')
 quest112 = Button(root, image=quest111, highlightthickness=0, bd=0, command=gameover2)
 
-quest113 = PhotoImage(file='vietnam.png')
+quest113 = PhotoImage(file='Images\Buttons/vietnam.png')
 quest114 = Button(root, image=quest113, highlightthickness=0, bd=0, command=gameover2)
 
-quest115 = PhotoImage(file='india.png')
+quest115 = PhotoImage(file='Images\Buttons/india.png')
 quest116 = Button(root, image=quest115, highlightthickness=0, bd=0, command=game2level3)
 
-quest117 = PhotoImage(file='japan.png')
+quest117 = PhotoImage(file='Images\Buttons/japan.png')
 quest118 = Button(root, image=quest117, highlightthickness=0, bd=0, command=gameover2)
 
 
@@ -799,24 +749,24 @@ def game2level4():
     quest134.place(y=650, x=80)
 
 
-label104 = Label(root, text="Счёт: " + str(score+2), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label104 = Label(root, text="Счёт: " + str(score+2), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-japanImage = PhotoImage(file='question_japan.png')
+japanImage = PhotoImage(file='Images\Questions/question_japan.png')
 japanImage = japanImage.subsample(1,1)
 japanImagelabel = Label(root, highlightthickness=0, bd=0)
 japanImagelabel.image = japanImage
 japanImagelabel['image'] = japanImage
 
-quest119 = PhotoImage(file='dania.png')
+quest119 = PhotoImage(file='Images\Buttons/dania.png')
 quest120 = Button(root, image=quest119, highlightthickness=0, bd=0, command=gameover2)
 
-quest121 = PhotoImage(file='usa.png')
+quest121 = PhotoImage(file='Images\Buttons/usa.png')
 quest122 = Button(root, image=quest121, highlightthickness=0, bd=0, command=gameover2)
 
-quest123 = PhotoImage(file='britan.png')
+quest123 = PhotoImage(file='Images\Buttons/britan.png')
 quest124 = Button(root, image=quest123, highlightthickness=0, bd=0, command=gameover2)
 
-quest125 = PhotoImage(file='japan.png')
+quest125 = PhotoImage(file='Images\Buttons/japan.png')
 quest126 = Button(root, image=quest125, highlightthickness=0, bd=0, command=game2level4)
 
 
@@ -837,24 +787,24 @@ def game2level5():
     quest140.place(y=570, x=80)
     quest142.place(y=650, x=80)
 
-label105 = Label(root, text="Счёт: " + str(score+3), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label105 = Label(root, text="Счёт: " + str(score+3), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-liviaImage = PhotoImage(file='question_livia.png')
+liviaImage = PhotoImage(file='Images\Questions/question_livia.png')
 liviaImage = liviaImage.subsample(1,1)
 liviaImagelabel = Label(root, highlightthickness=0, bd=0)
 liviaImagelabel.image = liviaImage
 liviaImagelabel['image'] = liviaImage
 
-quest127 = PhotoImage(file='egipet.png')
+quest127 = PhotoImage(file='Images\Buttons/egipet.png')
 quest128 = Button(root, image=quest127, highlightthickness=0, bd=0, command=gameover2)
 
-quest129 = PhotoImage(file='livia.png')
+quest129 = PhotoImage(file='Images\Buttons/livia.png')
 quest130 = Button(root, image=quest129, highlightthickness=0, bd=0, command=game2level5)
 
-quest131 = PhotoImage(file='sydan.png')
+quest131 = PhotoImage(file='Images\Buttons/sydan.png')
 quest132 = Button(root, image=quest131, highlightthickness=0, bd=0, command=gameover2)
 
-quest133 = PhotoImage(file='pery.png')
+quest133 = PhotoImage(file='Images\Buttons/pery.png')
 quest134 = Button(root, image=quest133, highlightthickness=0, bd=0, command=gameover2)
 
 
@@ -878,24 +828,24 @@ def game2level6():
     quest148.place(y=570, x=80)
     quest150.place(y=650, x=80)
 
-label106 = Label(root, text="Счёт: " + str(score+4), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label106 = Label(root, text="Счёт: " + str(score+4), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-chinaImage = PhotoImage(file='question_china.png')
+chinaImage = PhotoImage(file='Images\Questions/question_china.png')
 chinaImage = chinaImage.subsample(1,1)
 chinaImagelabel = Label(root, highlightthickness=0, bd=0)
 chinaImagelabel.image = chinaImage
 chinaImagelabel['image'] = chinaImage
 
-quest135 = PhotoImage(file='germany.png')
+quest135 = PhotoImage(file='Images\Buttons/germany.png')
 quest136 = Button(root, image=quest135, highlightthickness=0, bd=0, command=gameover2)
 
-quest137 = PhotoImage(file='india.png')
+quest137 = PhotoImage(file='Images\Buttons/india.png')
 quest138 = Button(root, image=quest137, highlightthickness=0, bd=0, command=gameover2)
 
-quest139 = PhotoImage(file='turkey.png')
+quest139 = PhotoImage(file='Images\Buttons/turkey.png')
 quest140 = Button(root, image=quest139, highlightthickness=0, bd=0, command=gameover2)
 
-quest141 = PhotoImage(file='china.png')
+quest141 = PhotoImage(file='Images\Buttons/china.png')
 quest142 = Button(root, image=quest141, highlightthickness=0, bd=0, command=game2level6)
 
 
@@ -916,47 +866,47 @@ def game2level7():
     quest156.place(y=570, x=80)
     quest158.place(y=650, x=80)
 
-label107 = Label(root, text="Счёт: " + str(score+5), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label107 = Label(root, text="Счёт: " + str(score+5), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-canadaImage = PhotoImage(file='question_canada.png')
+canadaImage = PhotoImage(file='Images\Questions/question_canada.png')
 canadaImage = canadaImage.subsample(1,1)
 canadaImagelabel = Label(root, highlightthickness=0, bd=0)
 canadaImagelabel.image = canadaImage
 canadaImagelabel['image'] = canadaImage
 
-quest143 = PhotoImage(file='canada.png')
+quest143 = PhotoImage(file='Images\Buttons/canada.png')
 quest144 = Button(root, image=quest143, highlightthickness=0, bd=0, command=game2level7)
 
-quest145 = PhotoImage(file='russia.png')
+quest145 = PhotoImage(file='Images\Buttons/russia.png')
 quest146 = Button(root, image=quest145, highlightthickness=0, bd=0, command=gameover2)
 
-quest147 = PhotoImage(file='sweeden.png')
+quest147 = PhotoImage(file='Images\Buttons/sweeden.png')
 quest148 = Button(root, image=quest147, highlightthickness=0, bd=0, command=gameover2)
 
-quest149 = PhotoImage(file='kuba.png')
+quest149 = PhotoImage(file='Images\Buttons/kuba.png')
 quest150 = Button(root, image=quest149, highlightthickness=0, bd=0, command=gameover2)
 
 
 #7 уровень###########################################################################################
 
-label108 = Label(root, text="Счёт: " + str(score+6), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label108 = Label(root, text="Счёт: " + str(score+6), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-franchImage = PhotoImage(file='question_franch.png')
+franchImage = PhotoImage(file='Images\Questions/question_franch.png')
 franchImage = franchImage.subsample(1,1)
 franchImagelabel = Label(root, highlightthickness=0, bd=0)
 franchImagelabel.image = franchImage
 franchImagelabel['image'] = franchImage
 
-quest151 = PhotoImage(file='usa.png')
+quest151 = PhotoImage(file='Images\Buttons/usa.png')
 quest152 = Button(root, image=quest151, highlightthickness=0, bd=0, command=gameover2)
 
-quest153 = PhotoImage(file='kazahstan.png')
+quest153 = PhotoImage(file='Images\Buttons/kazahstan.png')
 quest154 = Button(root, image=quest153, highlightthickness=0, bd=0, command=gameover2)
 
-quest155 = PhotoImage(file='serbia.png')
+quest155 = PhotoImage(file='Images\Buttons/serbia.png')
 quest156 = Button(root, image=quest155, highlightthickness=0, bd=0, command=gameover2)
 
-quest157 = PhotoImage(file='franch.png')
+quest157 = PhotoImage(file='Images\Buttons/franch.png')
 quest158 = Button(root, image=quest157, highlightthickness=0, bd=0, command=win1)
 
 
@@ -966,9 +916,9 @@ quest158 = Button(root, image=quest157, highlightthickness=0, bd=0, command=win1
 
 #Игра 3########################################################################################################3
 
-label200 = Label(root, text = "Выберите страну", font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=15)   #Название
-label201 = Label(root, text = "по фотографии", font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=15)
-label202 = Label(root, text="Счёт: " + str(score), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label200 = Label(root, text = "Выберите страну", font = (font, 27), bg = background, fg = fontground, pady=15)   #Название
+label201 = Label(root, text = "по фотографии", font = (font, 27), bg = background, fg = fontground, pady=15)
+label202 = Label(root, text="Счёт: " + str(score), font = (font, 27), bg = background, fg = fontground, pady=10)
 
 
 #1 уровень#######################################################################################################
@@ -989,22 +939,22 @@ def game3level2():
     quest316.place(y=650, x=80)
 
 
-rusImage = PhotoImage(file='game3perm.png')
+rusImage = PhotoImage(file='Images\CountriesPhoto/perm.png')
 rusImage = rusImage.subsample(4,4)
 rusImagelabel = Label(root, highlightthickness=0, bd=0)
 rusImagelabel.image = rusImage
 rusImagelabel['image'] = rusImage
 
-quest301 = PhotoImage(file='kazahstan.png')
+quest301 = PhotoImage(file='Images\Buttons/kazahstan.png')
 quest302 = Button(root, image=quest301, highlightthickness=0, bd=0, command=gameover3)
 
-quest303 = PhotoImage(file='brazilia.png')
+quest303 = PhotoImage(file='Images\Buttons/brazilia.png')
 quest304 = Button(root, image=quest303, highlightthickness=0, bd=0, command=gameover3)
 
-quest305 = PhotoImage(file='franch.png')
+quest305 = PhotoImage(file='Images\Buttons/franch.png')
 quest306 = Button(root, image=quest305, highlightthickness=0, bd=0, command=gameover3)
 
-quest307 = PhotoImage(file='russia.png')
+quest307 = PhotoImage(file='Images\Buttons/russia.png')
 quest308 = Button(root, image=quest307, highlightthickness=0, bd=0, command=game3level2)
 
 
@@ -1025,24 +975,24 @@ def game3level3():
     quest322.place(y=570, x=80)
     quest324.place(y=650, x=80)
 
-label203 = Label(root, text="Счёт: " + str(score+1), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label203 = Label(root, text="Счёт: " + str(score+1), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-usaImage = PhotoImage(file='game3newyork.png')
+usaImage = PhotoImage(file='Images\CountriesPhoto/newyork.png')
 usaImage = usaImage.subsample(4,4)
 usaImagelabel = Label(root, highlightthickness=0, bd=0)
 usaImagelabel.image = usaImage
 usaImagelabel['image'] = usaImage
 
-quest309 = PhotoImage(file='germany.png')
+quest309 = PhotoImage(file='Images\Buttons/germany.png')
 quest310 = Button(root, image=quest309, highlightthickness=0, bd=0, command=gameover3)
 
-quest311 = PhotoImage(file='usa.png')
+quest311 = PhotoImage(file='Images\Buttons/usa.png')
 quest312 = Button(root, image=quest311, highlightthickness=0, bd=0, command=game3level3)
 
-quest313 = PhotoImage(file='greek.png')
+quest313 = PhotoImage(file='Images\Buttons/greek.png')
 quest314 = Button(root, image=quest313, highlightthickness=0, bd=0, command=gameover3)
 
-quest315 = PhotoImage(file='pery.png')
+quest315 = PhotoImage(file='Images\Buttons/pery.png')
 quest316 = Button(root, image=quest315, highlightthickness=0, bd=0, command=gameover3)
 
 
@@ -1063,24 +1013,24 @@ def game3level4():
     quest330.place(y=570, x=80)
     quest332.place(y=650, x=80)
 
-label204 = Label(root, text="Счёт: " + str(score+2), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label204 = Label(root, text="Счёт: " + str(score+2), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-japaImage = PhotoImage(file='game3tokio.png')
+japaImage = PhotoImage(file='Images\CountriesPhoto/tokio.png')
 japaImage = japaImage.subsample(4,4)
 japaImagelabel = Label(root, highlightthickness=0, bd=0)
 japaImagelabel.image = japaImage
 japaImagelabel['image'] = japaImage
 
-quest317 = PhotoImage(file='korea.png')
+quest317 = PhotoImage(file='Images\Buttons/korea.png')
 quest318 = Button(root, image=quest317, highlightthickness=0, bd=0, command=gameover3)
 
-quest319 = PhotoImage(file='china.png')
+quest319 = PhotoImage(file='Images\Buttons/china.png')
 quest320 = Button(root, image=quest319, highlightthickness=0, bd=0, command=gameover3)
 
-quest321 = PhotoImage(file='japan.png')
+quest321 = PhotoImage(file='Images\Buttons/japan.png')
 quest322 = Button(root, image=quest321, highlightthickness=0, bd=0,command=game3level4)
 
-quest323 = PhotoImage(file='dania.png')
+quest323 = PhotoImage(file='Images\Buttons/dania.png')
 quest324 = Button(root, image=quest323, highlightthickness=0, bd=0, command=gameover3)
 
 
@@ -1102,24 +1052,24 @@ def game3level5():
     quest338.place(y=570, x=80)
     quest340.place(y=650, x=80)
 
-label205 = Label(root, text="Счёт: " + str(score+3), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label205 = Label(root, text="Счёт: " + str(score+3), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-londonImage = PhotoImage(file='game3london.png')
+londonImage = PhotoImage(file='Images\CountriesPhoto/london.png')
 londonImage = londonImage.subsample(4,4)
 londonImagelabel = Label(root, highlightthickness=0, bd=0)
 londonImagelabel.image = londonImage
 londonImagelabel['image'] = londonImage
 
-quest325 = PhotoImage(file='britan.png')
+quest325 = PhotoImage(file='Images\Buttons/britan.png')
 quest326 = Button(root, image=quest325, highlightthickness=0, bd=0, command=game3level5)
 
-quest327 = PhotoImage(file='chexia.png')
+quest327 = PhotoImage(file='Images\Buttons/chexia.png')
 quest328 = Button(root, image=quest327, highlightthickness=0, bd=0, command=gameover3)
 
-quest329 = PhotoImage(file='irak.png')
+quest329 = PhotoImage(file='Images\Buttons/irak.png')
 quest330 = Button(root, image=quest329, highlightthickness=0, bd=0, command=gameover3)
 
-quest331 = PhotoImage(file='slovakia.png')
+quest331 = PhotoImage(file='Images\Buttons/slovakia.png')
 quest332 = Button(root, image=quest331, highlightthickness=0, bd=0, command=gameover3)
 
 
@@ -1141,47 +1091,47 @@ def game3level6():
     quest346.place(y=570, x=80)
     quest348.place(y=650, x=80)
 
-label206 = Label(root, text="Счёт: " + str(score+4), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label206 = Label(root, text="Счёт: " + str(score+4), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-indiImage = PhotoImage(file='game3india.png')
+indiImage = PhotoImage(file='Images\CountriesPhoto/india.png')
 indiImage = indiImage.subsample(4,4)
 indiImagelabel = Label(root, highlightthickness=0, bd=0)
 indiImagelabel.image = indiImage
 indiImagelabel['image'] = indiImage
 
-quest333 = PhotoImage(file='egipet.png')
+quest333 = PhotoImage(file='Images\Buttons/egipet.png')
 quest334 = Button(root, image=quest333, highlightthickness=0, bd=0, command=gameover3)
 
-quest335 = PhotoImage(file='vengria.png')
+quest335 = PhotoImage(file='Images\Buttons/vengria.png')
 quest336 = Button(root, image=quest335, highlightthickness=0, bd=0, command=gameover3)
 
-quest337 = PhotoImage(file='spain.png')
+quest337 = PhotoImage(file='Images\Buttons/spain.png')
 quest338 = Button(root, image=quest337, highlightthickness=0, bd=0, command=gameover3)
 
-quest339 = PhotoImage(file='india.png')
+quest339 = PhotoImage(file='Images\Buttons/india.png')
 quest340 = Button(root, image=quest339, highlightthickness=0, bd=0, command=game3level6)
 
 
 #6 уровень########################################################################################
 
-label207 = Label(root, text="Счёт: " + str(score+5), font = ('Bookman Old Style', 27), bg = '#87CEFA', fg = 'black', pady=10)
+label207 = Label(root, text="Счёт: " + str(score+5), font = (font, 27), bg = background, fg = fontground, pady=10)
 
-rioiImage = PhotoImage(file='game3rio_de_janeyro.png')
+rioiImage = PhotoImage(file='Images\CountriesPhoto/rio_de_janeyro.png')
 rioiImage = rioiImage.subsample(4,4)
 rioiImagelabel = Label(root, highlightthickness=0, bd=0)
 rioiImagelabel.image = rioiImage
 rioiImagelabel['image'] = rioiImage
 
-quest341 = PhotoImage(file='brazilia.png')
+quest341 = PhotoImage(file='Images\Buttons/brazilia.png')
 quest342 = Button(root, image=quest341, highlightthickness=0, bd=0, command=win1)
 
-quest343 = PhotoImage(file='livia.png')
+quest343 = PhotoImage(file='Images\Buttons/livia.png')
 quest344 = Button(root, image=quest343, highlightthickness=0, bd=0, command=gameover3)
 
-quest345 = PhotoImage(file='vietnam.png')
+quest345 = PhotoImage(file='Images\Buttons/vietnam.png')
 quest346 = Button(root, image=quest345, highlightthickness=0, bd=0, command=gameover3)
 
-quest347 = PhotoImage(file='uzbek.png')
+quest347 = PhotoImage(file='Images\Buttons/uzbek.png')
 quest348 = Button(root, image=quest347, highlightthickness=0, bd=0, command=gameover3)
 
 

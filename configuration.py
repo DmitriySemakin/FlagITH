@@ -1,0 +1,6 @@
+size = '520x780'
+font = 'Bookman Old Style'
+background = '#87CEFA'
+fontground = 'black'
+CreatorName = 'Сделано командой ЕлсуковTeam'
+CreatorNameColor = '#A9A9A9'
